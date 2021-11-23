@@ -1,0 +1,10 @@
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\Client.exe.config
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\Client.exe
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\Client.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.MainForm.resources
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.GenerateResource.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.exe
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.pdb

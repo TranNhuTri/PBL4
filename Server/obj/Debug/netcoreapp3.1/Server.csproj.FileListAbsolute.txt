@@ -1,0 +1,14 @@
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.exe
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.deps.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.dev.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\netcoreapp3.1\Server.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.csproj.AssemblyReference.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache
