@@ -8,3 +8,6 @@ D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.GenerateResour
 D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.exe
 D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\System.CodeDom.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\System.CodeDom.xml
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.CopyComplete

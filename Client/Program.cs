@@ -13,7 +13,9 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var main = new MainForm();
+            var xuly = main.Handle();
+            Application.Run(main);
         }
     }
 }

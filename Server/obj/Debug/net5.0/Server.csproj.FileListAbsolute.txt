@@ -1,0 +1,16 @@
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.exe
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.deps.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.runtimeconfig.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.runtimeconfig.dev.json
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\ref\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\Server.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.csproj.AssemblyReference.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.AssemblyInfoInputs.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.AssemblyInfo.cs
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.csproj.CoreCompileInputs.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\ref\Server.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.pdb
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.genruntimeconfig.cache
