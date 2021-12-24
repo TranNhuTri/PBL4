@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DTO\CbbItem.cs" />
     <Compile Include="DTO\DiskDrive.cs" />
+    <Compile Include="DTO\LogicalDisk.cs" />
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

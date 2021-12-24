@@ -40,6 +40,7 @@ namespace Server
                     if(!client.Connected)
                     {
                         Server.clients.Remove(this.IP);
+                        Server.sendToAllClients(Server.getAllClientInfors());
                         break;
                     }    
                     string str = await reader.ReadLineAsync();
@@ -47,6 +48,7 @@ namespace Server
                     if (str == null)
                     {
                         Server.clients.Remove(this.IP);
+                        Server.sendToAllClients(Server.getAllClientInfors());
                         break;
                     }    
                     string[] request = str.Split(' ');
@@ -62,17 +64,24 @@ namespace Server
                                     Server.clients[request[2]].writer.WriteLine("get disk-drives " + this.IP);
                                     break;
                                 case "disk-drive-infor":
-                                    Console.WriteLine(request[2]);
+                                    Server.clients[request[2]].writer.WriteLine("get disk-drive-infor " + request[3] + " " + this.IP);
                                     break;
                             }
                             break;
                         case "post":
+                            var destinationIP = request[request.Length - 1];
                             switch (objectType)
                             {
                                 case "disk-drives":
-                                    var destinationName = request[2];
-                                    Server.clients[destinationName].writer.WriteLine("res disk-drives " + request[3]);
-                                    break;
+                                    {
+                                        Server.clients[destinationIP].writer.WriteLine("res disk-drives " + request[2]);
+                                        break;
+                                    }
+                                case "disk-drive-infor":
+                                    {
+                                        Server.clients[destinationIP].writer.WriteLine("res disk-drive-infor " + request[2]);
+                                        break;
+                                    }
                             }
                             break;
 
@@ -80,7 +89,7 @@ namespace Server
                 }
                 catch(Exception e)
                 {
-                    Console.WriteLine(e);
+                    Console.WriteLine("Error " + e);
                     return;
                 }
             }

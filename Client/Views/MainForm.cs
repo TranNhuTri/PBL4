@@ -17,7 +17,7 @@ namespace Client
 {
     public partial class MainForm : Form
     {
-        private IPAddress serverIP = IPAddress.Parse("192.168.1.8");
+        private IPAddress serverIP = IPAddress.Parse("192.168.1.3");
         private TcpClient client = new TcpClient();
         private StreamWriter writer;
         private StreamReader reader;
@@ -41,22 +41,28 @@ namespace Client
                 switch (type)
                 {
                     case "get":
+                        var destinationIP = res[res.Length - 1];
                         switch(objectType)
                         {
                             case "disk-drives":
-                                var post = "post disk-drives " + res[2] + " ";
-                                var diskDriveQuery = new ManagementObjectSearcher("select * from Win32_DiskDrive");
-                                foreach (var item in diskDriveQuery.Get())
                                 {
-                                    post = post + item.Properties["Name"].Value.ToString().Substring(4) + ",";
+                                    var post = "post disk-drives ";
+                                    var diskDriveQuery = new ManagementObjectSearcher("select * from Win32_DiskDrive");
+                                    foreach (var item in diskDriveQuery.Get())
+                                    {
+                                        post = post + item.Properties["Name"].Value.ToString().Substring(4) + ",";
+                                    }
+                                    post = post.Substring(0, post.Length - 1) + " " + destinationIP;
+                                    writer.WriteLine(post);
+                                    break;
                                 }
-                                post = post.Substring(0, post.Length - 1);
-                                writer.WriteLine(post);
-                                break;
                             case "disk-drive-infor":
-                                var diskDrive = Service.Instance.GetDiskDriveInfor(res[2]);
-                                MessageBox.Show(diskDrive.ToString());
-                                break;
+                                {
+                                    var diskDrive = Service.Instance.GetDiskDriveInfor(res[2]);
+                                    var post = "post disk-drive-infor " + diskDrive.ToString() + " " + destinationIP;
+                                    writer.WriteLine(post);
+                                    break;
+                                }
                         }    
                         break;
                     case "post":
@@ -65,12 +71,21 @@ namespace Client
                         switch (objectType)
                         {
                             case "disk-drives":
-                                var data = res[2].Split(',');
-                                foreach (var item in data)
                                 {
-                                    disk_drive_cbb.Items.Add(item);
+                                    disk_drive_cbb.Items.Clear();
+                                    var data = res[2].Split(',');
+                                    foreach (var item in data)
+                                    {
+                                        disk_drive_cbb.Items.Add(item);
+                                    }
+                                    break;
                                 }
-                                break;
+                            case "disk-drive-infor":
+                                {
+                                    var diskDrive = new DiskDrive(res[2]);
+                                    SetGUI(diskDrive);
+                                    break;
+                                }
                         }
                         break;
                     default:
@@ -97,7 +112,69 @@ namespace Client
                 }
             }
         }
+        private void SetGUI(DiskDrive diskDrive)
+        {
+            disk_drive_name_txt.Text = diskDrive.Name;
+            producer_txt.Text = diskDrive.Producer;
+            product_code_txt.Text = diskDrive.ProdutCode;
+            serial_number_txt.Text = diskDrive.SerialNumber;
+            media_type_txt.Text = diskDrive.MediaType;
+            total_sector_txt.Text = diskDrive.TotalSector.ToString();
+            space_txt.Text = diskDrive.Space.ToString() + " GB";
+            free_space_txt.Text = diskDrive.FreeSpace.ToString() + " GB";
+            status_txt.Text = diskDrive.Status;
+            sectors_per_track_txt.Text = diskDrive.SectorsPerTrack.ToString();
+            tracks_per_cylinder_txt.Text = diskDrive.TracksPerCynlinder.ToString();
+            total_cylinder_txt.Text = diskDrive.TotalCylinder.ToString();
+            bytes_per_sector_txt.Text = diskDrive.BytesPerSector.ToString();
 
+            int tmpX = 0, tmpY = 0, locationX = 30;
+            foreach (var logicalDisk in diskDrive.logicalDisks)
+            {
+                var dynamicLabel = new Label();
+                dynamicLabel.Height = 21;
+                dynamicLabel.Width = 21;
+                dynamicLabel.Text = logicalDisk.Name;
+
+                var dynamicLabel_2 = new Label();
+                dynamicLabel_2.Height = 20;
+                dynamicLabel_2.Width = 170;
+                dynamicLabel_2.Text = logicalDisk.FreeSpace.ToString() + " GB free of " + logicalDisk.Space.ToString() + " GB";
+
+                var dynamicProgressBar = new ProgressBar();
+                dynamicProgressBar.Height = 20;
+                dynamicProgressBar.Width = 240;
+                dynamicProgressBar.Minimum = 0;
+                dynamicProgressBar.Maximum = 100;
+                dynamicProgressBar.Value = (int)((logicalDisk.Space - logicalDisk.FreeSpace)*1.0/logicalDisk.Space * 100);
+
+                var temp = tmpX + locationX + dynamicProgressBar.Width + dynamicLabel.Width;
+
+                if (temp > this.panel.Width)
+                {
+                    tmpY += dynamicLabel.Height + dynamicProgressBar.Height + dynamicLabel_2.Height;
+                    tmpX = 0;
+
+                    dynamicLabel.Location = new Point(tmpX, tmpY + 4);
+                    dynamicLabel_2.Location = new Point(tmpX, tmpY + dynamicLabel.Height + 4);
+                    dynamicProgressBar.Location = new Point(tmpX + dynamicLabel.Width, tmpY);
+
+                    tmpX = locationX + dynamicProgressBar.Width + dynamicLabel.Width;
+                }
+                else
+                {
+                    dynamicLabel.Location = new Point(tmpX, tmpY + 4);
+                    dynamicLabel_2.Location = new Point(tmpX, tmpY + dynamicLabel.Height + 4);
+                    dynamicProgressBar.Location = new Point(tmpX + dynamicLabel.Width, tmpY);
+
+                    tmpX += locationX + dynamicProgressBar.Width + dynamicLabel.Width;
+                }
+
+                panel.Controls.Add(dynamicProgressBar);
+                panel.Controls.Add(dynamicLabel);
+                panel.Controls.Add(dynamicLabel_2);
+            }
+        }
         private void machine_cbb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(machine_cbb.SelectedIndex != 0)

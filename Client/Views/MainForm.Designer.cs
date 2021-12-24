@@ -61,6 +61,7 @@ namespace Client
             this.lbNSX = new System.Windows.Forms.Label();
             this.disk_drive_name_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lbNameOfDevice
@@ -387,11 +388,20 @@ namespace Client
             this.label1.TabIndex = 83;
             this.label1.Text = "Tên ổ cứng";
             // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(11, 270);
+            this.panel.Margin = new System.Windows.Forms.Padding(2);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(767, 217);
+            this.panel.TabIndex = 84;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 452);
+            this.ClientSize = new System.Drawing.Size(789, 498);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.disk_drive_name_txt);
             this.Controls.Add(this.bytes_per_sector_txt);
@@ -466,6 +476,7 @@ namespace Client
         private System.Windows.Forms.Label lbNSX;
         private System.Windows.Forms.TextBox disk_drive_name_txt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel;
     }
 }
 
