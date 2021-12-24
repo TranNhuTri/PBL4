@@ -11,3 +11,7 @@ D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.pdb
 D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\System.CodeDom.dll
 D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\System.CodeDom.xml
 D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.csproj.CopyComplete
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\CircularProgressBar.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\WinFormAnimation.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Client\bin\Debug\CircularProgressBar.xml
+D:\Tài liệu BK\Học kì 5\PBL4\Client\obj\Debug\Client.Views.DetailForm.resources

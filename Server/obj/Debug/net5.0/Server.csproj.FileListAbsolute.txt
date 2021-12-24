@@ -14,3 +14,5 @@ D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.dll
 D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\ref\Server.dll
 D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.pdb
 D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.genruntimeconfig.cache
+D:\Tài liệu BK\Học kì 5\PBL4\Server\bin\Debug\net5.0\CircularProgressBar.dll
+D:\Tài liệu BK\Học kì 5\PBL4\Server\obj\Debug\net5.0\Server.csproj.CopyComplete

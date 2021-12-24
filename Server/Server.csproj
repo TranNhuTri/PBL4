@@ -5,4 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
+  </ItemGroup>
+
 </Project>

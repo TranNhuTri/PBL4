@@ -1,5 +1,6 @@
 ﻿using Client.DTO;
 using Client.Services;
+using Client.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace Client
         private TcpClient client = new TcpClient();
         private StreamWriter writer;
         private StreamReader reader;
+        private DiskDrive diskDrive;
         public MainForm()
         {
             InitializeComponent();
@@ -82,7 +84,7 @@ namespace Client
                                 }
                             case "disk-drive-infor":
                                 {
-                                    var diskDrive = new DiskDrive(res[2]);
+                                    this.diskDrive = new DiskDrive(res[2]);
                                     SetGUI(diskDrive);
                                     break;
                                 }
@@ -90,7 +92,6 @@ namespace Client
                         break;
                     default:
                         machine_cbb.Items.Clear();
-                        machine_cbb.Items.Add("This PC");
 
                         foreach (var item in res)
                         {
@@ -111,6 +112,41 @@ namespace Client
                         break;
                 }
             }
+        }
+        public void RemoveLabelAndProgressBar()
+        {
+
+            List<Label> labels = panel.Controls.OfType<Label>().ToList();
+            List<ProgressBar> progressBars = panel.Controls.OfType<ProgressBar>().ToList();
+
+            foreach (Label lb in labels)
+            {
+                lb.Click -= new EventHandler(this.dynamicLabel_Click);
+                panel.Controls.Remove(lb);
+                lb.Dispose();
+            }
+
+            foreach (ProgressBar pgb in progressBars)
+            {
+                panel.Controls.Remove(pgb);
+                pgb.Dispose();
+            }
+        }
+        private void dynamicLabel_Click(object sender, EventArgs e)
+        {
+            Label lb = sender as Label;
+            string nameOfLogicalDisk = lb.Text;
+            LogicalDisk logicalDisk = null;
+            foreach(var item in this.diskDrive.logicalDisks)
+            {
+                if(item.Name == nameOfLogicalDisk)
+                {
+                    logicalDisk = item;
+                    break;
+                }
+            }    
+            DetailForm f = new DetailForm(logicalDisk);
+            f.Show();
         }
         private void SetGUI(DiskDrive diskDrive)
         {
@@ -135,6 +171,7 @@ namespace Client
                 dynamicLabel.Height = 21;
                 dynamicLabel.Width = 21;
                 dynamicLabel.Text = logicalDisk.Name;
+                dynamicLabel.Click += dynamicLabel_Click;
 
                 var dynamicLabel_2 = new Label();
                 dynamicLabel_2.Height = 20;
@@ -177,7 +214,7 @@ namespace Client
         }
         private void machine_cbb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(machine_cbb.SelectedIndex != 0)
+            if(machine_cbb.SelectedIndex != -1)
             {
                 string request = "get disk-drives " + ((CbbItem)machine_cbb.SelectedItem).IP;
                 writer.WriteLine(request);

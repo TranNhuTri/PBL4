@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "LnFpbdEvWietXWfcxR/ZTN8AXt5KgpBcAjIdIxeDzh/gdo4Joetn2r0dmY1LYCLc3abqgHQFVynqv0VQDIc+NA==",
+  "dgSpecHash": "Z4vm7tkDHZebBIgYub/O5FzK2BbyfVHiLY1+oJUSEE1BGEI33YHZjzCaWjNxUHWxd4Wv6RrciI6JYb0v6y4GRQ==",
   "success": true,
   "projectFilePath": "D:\\Tài liệu BK\\Học kì 5\\PBL4\\Server\\Server.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'CircularProgressBar 2.8.0.16' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "CircularProgressBar",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
